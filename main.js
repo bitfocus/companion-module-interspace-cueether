@@ -148,6 +148,7 @@ class ModuleInstance extends InstanceBase {
 
 			this.udp.on('message', async (msg, rinfo) => {
 				if (msg.equals(expectedBuffer)) {
+					this.log('debug', '  Received cue');
 					this.checkFeedbacks('ack_cue_feedback');
 					await sleep(200);
 					this.checkFeedbacks('ack_cue_feedback');
@@ -184,6 +185,7 @@ class ModuleInstance extends InstanceBase {
 
 			this.socket.on('data', async (data) => {
 				if (data.equals(expectedBuffer)) {
+					this.log('debug', '  Received cue');
 					this.checkFeedbacks('ack_cue_feedback');
 					await sleep(200);
 					this.checkFeedbacks('ack_cue_feedback');
@@ -221,7 +223,7 @@ class ModuleInstance extends InstanceBase {
 			if (this.config.protocol == 'udp') {
 				if (this.udp !== undefined) {
 					this.lastCuePress = cueType;
-					this.log('debug', `Sending ${_packet.toString()} to ${this.config.broadcastIP}`);
+					this.log('debug', `Sending ${cueType} to ${this.config.broadcastIP}`);
 					await this.udp.send(_packet);
 				} else {
 					this.log('error', 'UDP Socket not connected - Try restarting module');
@@ -231,7 +233,7 @@ class ModuleInstance extends InstanceBase {
 			if (this.config.protocol == 'tcp') {
 				if (this.socket !== undefined && this.socket.isConnected) {
 					this.lastCuePress = cueType;
-					this.log('debug', `Sending ${_packet.toString()} to ${this.config.targetIP}`);
+					this.log('debug', `Sending ${cueType} to ${this.config.targetIP}`);
 					await this.socket.send(_packet);
 				} else {
 					this.log('error', 'TCP Socket not connected - Try restarting module');

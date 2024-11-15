@@ -38,7 +38,7 @@ module.exports = [
 						<li>Now by adding the Cue Presets to your Companion layout, you should be able to Send Cues to your device</li>
 						<li>The background of the Cue Presets will light up (red/green/white) on press, if everything has been setup correctly</li>
 					</ol>
-					<a href="https://github.com/Luuccc/companion-module-interspace-cueether" target="_new" class="btn">CueEther Module Github</a>
+					<a href="https://github.com/bitfocus/companion-module-interspace-cueether" target="_new" class="btn">CueEther Module Github</a>
 				</div>
 			`,
 	},

@@ -23,6 +23,4 @@ By default this module is setup to use UDP. Broadcasting Cues to the default 255
 4. Now by adding the Cue Presets to your Companion layout, you should be able to Send Cues to your device
 5. The background of the Cue Presets will light up (red/green/white) on press, if everything has been setup correctly
 
-[CueEther Module Github] (https://github.com/bitfocus/companion-module-interspace-cueether)
-
 See [HELP.md](./companion/HELP.md) and [LICENSE](./LICENSE)
